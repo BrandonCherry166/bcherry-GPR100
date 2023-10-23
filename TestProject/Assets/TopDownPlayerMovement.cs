@@ -7,7 +7,7 @@ public class TopDownPlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed = 5.0f;
-    public Score score;
+   
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,10 +28,5 @@ public class TopDownPlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("It works");
-        collision.transform.position = new Vector3(Random.Range(-5.0f, 5.0f), Random.Range(-2.0f, 2.0f), 0);
-        //score = score + 10;
-    }
+    
 }

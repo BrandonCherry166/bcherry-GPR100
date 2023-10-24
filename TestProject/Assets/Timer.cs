@@ -8,7 +8,8 @@ public class Timer : MonoBehaviour
 {
     public float currentTime = 0f;
     public float startingTime = 60f;
-    public TextMeshProUGUI timer;
+    public TextMeshProUGUI timerText;
+    public SceneSwitch gameOver;
 
     private void Start()
     {
@@ -17,10 +18,13 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         currentTime -= Time.deltaTime;
-        timer.text = "Time Remaining: " + currentTime.ToString("0");
+        timerText.text = "Time Remaining: " + currentTime.ToString("0");
         if (currentTime <= 0)
         {
             currentTime = 0;
+            gameOver.switchScene();
         }
     }
+   
+ 
 }
